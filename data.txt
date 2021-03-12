@@ -1,1 +1,16 @@
+#3c66b4#ea5d5d#85ff85#3535c0
+#e292fe#e22400#b1dd8b#74a7ff
+#93e3fd#e63b7a#263e0f#0000ff
+#adadad#ff8c82#669d34#52d6fc
+#ffc157#db3030#00a800#5083d4
+#efcaff#e22400#76bb40#3a87fe
+#ffffff#ff0000#00ff00#00c7ff
+#00cbff#ff2d00#00ff89#00deff
+#ffffff#0056d6#c3d117#0000ff
+#00ffba#ff5600#00ffc8#00acff
+#52d6fc#ff4015#76bb40#3a87fe
+#61187c#e22400#76bb40#008cb4
+#ffdbd8#ff6250#76bb40#016e8f
+#ffba00#ff0000#00ffbd#0068ff
+#000000#ff0000#96d35f#0056d6
 #ffffff#ff0000#00ff00#0000ff
