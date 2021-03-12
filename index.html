@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colors</title>
+
+    <link rel="Shortcut Icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="img/2.png" alt="colors" style="display:none;">
+
+    <form class="colors" action="result.php" method="post">
+
+            <p>Choose your favourite color</p>
+            <input type="color" name="color" value="#ffffff">
+
+            <p>Choose your favourite RED</p>
+            <input type="color" name="red" value="#ff0000">
+
+            <p>Choose your favourite GREEN</p>
+            <input type="color" name="green" value="#00ff00">
+
+            <p>Choose your favourite BLUE</p>
+            <input type="color" name="blue" value="#0000ff">
+
+            <hr>
+
+            <input type="submit" name="" value="Submit">
+    </form>
+
+    <p>
+        <button onclick="window.location.href = 'view_result.php';">Result Page</button>
+    </p>
+
+</body>
+
+</html>

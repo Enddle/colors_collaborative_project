@@ -1,0 +1,85 @@
+
+body {
+	text-align: center;
+    font-family: sans-serif;
+}
+
+p {
+    max-width: 500px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 28px;
+}
+
+p.t {
+    padding: 0 20px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.fig-container {
+    display: block;
+    text-align: center;
+}
+
+.fig-container img {
+    margin: auto;
+    padding: 15px 20px 5px 20px;
+}
+
+i.right {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+}
+
+hr {
+    margin: 30px;
+}
+
+ball {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 0 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.canvas-container {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.next {
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 25px;
+    margin: 10px;
+    box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5);
+}
+
+button.next:active {
+    right: 52px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+    background: #eee;
+    /* background: url("img/bg.png"); */
+    margin: 5px;
+    border-radius: 50%;
+}
+
+small {
+    display: block;
+    margin-bottom: 10px;
+}
