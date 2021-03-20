@@ -1,7 +1,8 @@
 
 body {
-	text-align: center;
+    text-align: center;
     font-family: sans-serif;
+    height: 100vh;
 }
 
 p {
@@ -39,13 +40,57 @@ hr {
     margin: 30px;
 }
 
+.title {
+    font-variant-caps: all-small-caps;
+    font-size: 28px;
+    margin: -10px 0 30px 0;
+}
+
 ball {
     display: inline-block;
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    margin: 0 15px;
+    border: 1px solid lightgrey;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+
+ball:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+
+ball:active {
+    opacity: 0.5;
+    transition: 0.1s;
+}
+
+ball span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: -1px;
+    border-radius: 25px;
+}
+
+ball i {
+    display: inline-block;
+    font-size: 30px;
+    margin: 3px 10px;
+}
+
+div.card {
+    width: 420px;
+    padding: 30px;
+    margin: auto;
+}
+
+.colors {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
 }
 
 .canvas-container {
