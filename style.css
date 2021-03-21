@@ -5,6 +5,24 @@ body {
     height: 100vh;
 }
 
+.color-background {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.color-background.custom {
+    animation: blink 5s infinite;
+    background-color: #666666;
+}
+
+@keyframes blink {
+  0% {opacity: 0.8;}
+  50% {opacity: 0.5;}
+  100% {opacity: 0.8;}
+}
+
 p {
     max-width: 500px;
     margin-top: 50px;

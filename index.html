@@ -24,6 +24,9 @@
 <body style="background: #111111;">
     <img src="img/2.png" alt="colors" style="display:none;">
 
+    <div class="color-background custom"></div>
+    <div class="color-background transition"></div>
+
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
 
@@ -43,6 +46,7 @@
                 <script type="text/javascript">
 
                     $("ball span").hide();
+                    $(".color-background.transition").hide();
 
                     var current = 0;
                     var title_pre = "Choose your favourite ";
@@ -77,13 +81,15 @@
 
                         hex = colorPicker.color.hexString;
 
-                        $("ball span").eq(current).css("background", hex);
-                        $("ball span").eq(current).fadeIn(function() {
-                            $("ball").eq(current).css("background", hex);
-                            $("input[type=color]")[current].value = hex;
-                            $(this).hide();
-                            setCurrent(current + 1);
-                        });
+                        $("input[type=color]")[current].value = hex;
+
+                        colorTransition($("ball span").eq(current), $("ball").eq(current), hex);
+
+                        if (current == 0) {
+                            colorTransition($(".color-background.transition"), $(".color-background.custom"), hex, 5000);
+                        }
+
+                        setCurrent(current + 1);
                     }
 
                     $("ball").click(function() {
@@ -98,6 +104,15 @@
                       // Set the initial color to pure red
                       color: "#fff"
                     });
+
+                    function colorTransition(transitionLayer, backgroundLayer, colorHex, speed = 400) {
+
+                        transitionLayer.css("background", hex);
+                        transitionLayer.fadeIn(speed, function() {
+                            backgroundLayer.css("background", hex);
+                            $(this).fadeOut(speed);
+                        });
+                    }
                 </script>
             </div>
 
