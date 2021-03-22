@@ -138,6 +138,9 @@
 
     <!-- tooltips -->
     <script src="codes/color-tooltips.js" charset="utf-8"></script>
+
+    <!-- custom code -->
+    <script src="codes/github-link.js" charset="utf-8"></script>
 </body>
 
 </html>
