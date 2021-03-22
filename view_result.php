@@ -7,77 +7,87 @@
     <title>View Result - Colors</title>
 
     <link rel="Shortcut Icon" href="favicon.ico">
+
+    <!-- jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <!-- bootstrap v5.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <!-- custom styles -->
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="codes/graphics.js" charset="utf-8"></script>
 </head>
 <body>
-<script type="text/javascript">
-<?php
+    <script type="text/javascript">
+    <?php
 
-include_once("codes/hex.php");
-include_once("codes/circles.php");
-include_once("codes/graphics.php");
+    include_once("codes/hex.php");
+    include_once("codes/circles.php");
+    include_once("codes/graphics.php");
 
-$draw_color = "function draw_color(cont) {\n";
-$draw_red   = "function draw_red(cont)   {\n";
-$draw_green = "function draw_green(cont) {\n";
-$draw_blue  = "function draw_blue(cont)  {\n";
+    $draw_color = "function draw_color(cont) {\n";
+    $draw_red   = "function draw_red(cont)   {\n";
+    $draw_green = "function draw_green(cont) {\n";
+    $draw_blue  = "function draw_blue(cont)  {\n";
 
-// READ FILE STARTS HERE
+    // READ FILE STARTS HERE
 
-$file = fopen("data.txt","r");
-
-$data = fgets($file);
-$count = 1;
-
-$color = data2array($data, 0);
-$red   = data2array($data, 1);
-$green = data2array($data, 2);
-$blue  = data2array($data, 3);
-
-$view = (isset($_GET["detail"])) ? "single" : "multi";
-
-$draw_color = $draw_color . drawCode($color, $view);
-$draw_red   = $draw_red   . drawCode($red  , $view);
-$draw_green = $draw_green . drawCode($green, $view);
-$draw_blue  = $draw_blue  . drawCode($blue , $view);
-
-while(! feof($file))  {
+    $file = fopen("data.txt","r");
 
     $data = fgets($file);
+    $count = 1;
 
-    if (empty($data)) { break; } // Break out at the last empty line
+    $color = data2array($data, 0);
+    $red   = data2array($data, 1);
+    $green = data2array($data, 2);
+    $blue  = data2array($data, 3);
 
-    $count += 1;
+    $view = (isset($_GET["detail"])) ? "single" : "multi";
 
-    $draw_color = $draw_color . drawCode(data2array($data, 0), $view);
-    $draw_red   = $draw_red   . drawCode(data2array($data, 1), $view);
-    $draw_green = $draw_green . drawCode(data2array($data, 2), $view);
-    $draw_blue  = $draw_blue  . drawCode(data2array($data, 3), $view);
+    $draw_color = $draw_color . drawCode($color, $view);
+    $draw_red   = $draw_red   . drawCode($red  , $view);
+    $draw_green = $draw_green . drawCode($green, $view);
+    $draw_blue  = $draw_blue  . drawCode($blue , $view);
 
-    $color = arrays_sum($color, data2array($data, 0));
-    $red   = arrays_sum($red  , data2array($data, 1));
-    $green = arrays_sum($green, data2array($data, 2));
-    $blue  = arrays_sum($blue , data2array($data, 3));
-}
+    while(! feof($file))  {
 
-echo "$draw_color }\n\n $draw_red }\n\n $draw_green }\n\n $draw_blue }\n\n";
+        $data = fgets($file);
 
-fclose($file);
+        if (empty($data)) { break; } // Break out at the last empty line
 
-$color = arrays_average($color, $count);
-$red   = arrays_average($red  , $count);
-$green = arrays_average($green, $count);
-$blue  = arrays_average($blue , $count);
+        $count += 1;
 
-$color = array2hex($color);
-$red   = array2hex($red  );
-$green = array2hex($green);
-$blue  = array2hex($blue );
+        $draw_color = $draw_color . drawCode(data2array($data, 0), $view);
+        $draw_red   = $draw_red   . drawCode(data2array($data, 1), $view);
+        $draw_green = $draw_green . drawCode(data2array($data, 2), $view);
+        $draw_blue  = $draw_blue  . drawCode(data2array($data, 3), $view);
 
-?>
-</script>
+        $color = arrays_sum($color, data2array($data, 0));
+        $red   = arrays_sum($red  , data2array($data, 1));
+        $green = arrays_sum($green, data2array($data, 2));
+        $blue  = arrays_sum($blue , data2array($data, 3));
+    }
+
+    echo "$draw_color }\n\n $draw_red }\n\n $draw_green }\n\n $draw_blue }\n\n";
+
+    fclose($file);
+
+    $color = arrays_average($color, $count);
+    $red   = arrays_average($red  , $count);
+    $green = arrays_average($green, $count);
+    $blue  = arrays_average($blue , $count);
+
+    $color = array2hex($color);
+    $red   = array2hex($red  );
+    $green = array2hex($green);
+    $blue  = array2hex($blue );
+
+    ?>
+    </script>
 
     <p>Colors by <?=$count?> people:</p>
 
@@ -122,6 +132,8 @@ $blue  = array2hex($blue );
 
     </script>
 
+    <!-- tooltips -->
+    <script src="codes/color-tooltips.js" charset="utf-8"></script>
 </body>
 
 </html>

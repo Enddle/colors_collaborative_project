@@ -70,8 +70,12 @@ ball {
     height: 50px;
     border-radius: 25px;
     border: 1px solid lightgrey;
-    margin: 10px 0 0 0;
+    margin: 0 15px;
     cursor: pointer;
+}
+
+.colors ball {
+    margin: 10px 0 0 0;
 }
 
 ball:hover {
