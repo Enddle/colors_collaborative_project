@@ -98,7 +98,7 @@ fclose($file);
     <ball style="background: <?=$blue ?>"></ball>
 
     <p>
-        <button onclick="window.location.href = 'view_result.php';">Result Page</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href = 'view_result.php';">Result Page</button>
     </p>
 
     <!-- tooltips -->

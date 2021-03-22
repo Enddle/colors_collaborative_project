@@ -2,7 +2,10 @@
 body {
     text-align: center;
     font-family: sans-serif;
-    height: 100vh;
+}
+
+.h-100 {
+    height: 100vh !important;
 }
 
 .color-background {
@@ -71,11 +74,6 @@ ball {
     border-radius: 25px;
     border: 1px solid lightgrey;
     margin: 0 15px;
-    cursor: pointer;
-}
-
-.colors ball {
-    margin: 10px 0 0 0;
 }
 
 ball:hover {
@@ -83,7 +81,12 @@ ball:hover {
     transition: 0.2s;
 }
 
-ball:active {
+.colors ball {
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+
+.colors ball:active {
     opacity: 0.5;
     transition: 0.1s;
 }
@@ -149,4 +152,32 @@ canvas {
 small {
     display: block;
     margin-bottom: 10px;
+}
+
+@media (max-width: 499px) {
+
+    div.card {
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    .title {
+        margin-bottom: 15px;
+        font-size: calc(1.325rem + .9vw); /* h2 font size */
+    }
+
+    .colors {
+        position: static;
+        width: 100vw;
+        height: 60px;
+        margin-top: 5px;
+    }
+
+    ball {
+        margin: 0 5px;
+    }
+
+    ball i {
+        float: right;
+    }
 }

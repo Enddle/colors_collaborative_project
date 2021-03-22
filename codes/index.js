@@ -11,7 +11,7 @@ $(".color-background.transition").hide();
 
 var current = 0;
 var title_pre = "Choose your favourite ";
-var title_color = ["color", "red", "green", "blue"];
+var title_color = ["color", "<b style='color: red'>red</b>", "<b style='color: green'>green</b>", "<b style='color: blue'>blue</b>"];
 var title_submit = "Make changes or Submit now";
 
 var icons = ["bi-arrow-right-short", "bi-check"];

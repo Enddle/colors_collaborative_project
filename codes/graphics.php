@@ -10,7 +10,7 @@ function showCanvas($view) {
 
         <small id='caption'></small>
 
-        <button onclick='window.location.href = \"?#canvas1\";'>Overview</button>";
+        <button type='button' class='btn btn-secondary' onclick='window.location.href = \"?#canvas1\";'>Overview</button>";
 
     } else {
         echo "
@@ -22,7 +22,7 @@ function showCanvas($view) {
             <canvas id='canvas4' width='256' height='256'></canvas>
         </div>
 
-        <button onclick='window.location.href = \"?detail#canvas\";'>Detail</button>";
+        <button type='button' class='btn btn-secondary' onclick='window.location.href = \"?detail#canvas\";'>Detail</button>";
     }
 }
 

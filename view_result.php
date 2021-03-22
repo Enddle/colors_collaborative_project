@@ -113,6 +113,10 @@
         Figures above show an intuitive representation of the chart and how a color is placed on the chart.
     </p>
 
+    <p>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href = './';">Survey Page</button>
+    </p>
+
     <p class="t">
         <b>PRIVACY</b>
         <br><br>
